@@ -22,12 +22,10 @@ const Hero = () => {
           <p className='text-sm lg:text-base text-brand-balck-100'>
           Nunc quis eleifend lectus. Donec id semper ligula, ut laoreet orci. Donec tempor vestibulum quam non gravida. Sed eleifend, erat at pulvinar hendrerit, diam dui dignissim diam, non congue nibh sem eget sapien.
           </p>
-          <div className='hidden md:flex items-center gap-2.5 py-6'>
-            <Input className="max-w-[405px] bg-white shadow-none h-[50px] rounded-full px-6 border-none focus-visible:ring-brand-main" type="email" placeholder="Enter your email Address " />
-            <CustomButton className="max-w-56 w-full" content="Signup Now" />
+          <div className='flex flex-col md:flex-row items-center gap-2.5 py-6'>
+            <Input className="md:max-w-[405px] bg-white shadow-none h-[50px] rounded-full px-6 border-none focus-visible:ring-brand-main" type="email" placeholder="Enter your email Address " />
+            <CustomButton className="md:max-w-56 w-full" content="Signup Now" />
           </div>
-          <CustomButton className="md:hidden w-full" content="Email Signup" />
-
         </div>
         <div className='relative flex-1'>
           <Image className='' src={"/sections/hero.png"} alt='hreo' width={1112} height={1031} />
