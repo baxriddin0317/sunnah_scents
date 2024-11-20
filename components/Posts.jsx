@@ -19,12 +19,12 @@ const Posts = () => {
     <section className='relative bg-brand-yellow pt-36 pb-16'>
       <div className='max-w-[1582px] mx-auto px-4'>
         {/* head */}
-        <div className='flex flex-col lg:flex-row gap-2 items-center justify-between lg:pr-12'>
+        <div className='flex flex-col lg:flex-row gap-2 lg:items-center justify-between lg:pr-12'>
           <div className='flex flex-col gap-2 items-start'>
             <p className='text-brand-balck-100'>Blogs</p>
             <h3 className='text-brand-main font-medium uppercase text-32 lg:text-40'>explore our Blog posts</h3>
           </div>
-          <CustomButton className="w-full lg:w-44" content="view more" />
+          <CustomButton className="w-full sm:w-44" content="view more" />
         </div>
         {/* posts */}
         <div className='flex items-center justify-center xl:justify-between flex-wrap gap-6 lg:gap-10 mt-6 lg:mt-16'>
