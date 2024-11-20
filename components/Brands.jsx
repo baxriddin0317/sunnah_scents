@@ -27,7 +27,7 @@ const Brands = ({color}) => {
         <Image className='-translate-y-10 -translate-x-32' src={'/sections/brends.png'} alt='brends' fill />
       </div>
       <div className={`absolute z-10 ${color ? 'bg-brand-yellow/30' : 'bg-brand-yellow-100/70'} blur-sm inset-0 size-full`}></div>
-      <div className='max-w-7xl w-full mx-auto xl:max-w-full relative z-20 flex flex-col lg:flex-row items-center justify-between gap-6 md:pl-10 xl:pl-48'>
+      <div className='w-full mx-auto max-w-[1920px] relative z-20 flex flex-col lg:flex-row items-center justify-between gap-6 md:pl-10 xl:pl-48'>
         <div className='relative lg:min-w-[413px] w-full z-20'>
           <div className='flex flex-col text-brand-balck-100 leading-6 gap-2 md:gap-5'>
             <p className=''>Top Brands</p>

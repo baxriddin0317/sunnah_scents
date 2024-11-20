@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Spray = () => {
   return (
     <section className='relative bg-brand-yellow-100  py-20'>
-      <div className='absolute bottom-0'>
+      <div className='absolute bottom-0 2xl:right-1/2 2xl:translate-x-1/2'>
       <Image className='size-full object-cover bottom-0 z-0' src={"/sections/spray-bg2.png"} width={1920} height={1165} alt='' />
       </div>
       <div className='relative z-10 flex flex-col lg:flex-row gap-6 max-w-[1484px] mx-auto items-center h-full px-4'>

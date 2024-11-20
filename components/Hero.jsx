@@ -10,7 +10,7 @@ const Hero = () => {
         <Image className="absolute -left-10 lg:left-0 z-0" src={'/sections/hero-1.png'} width={166} height={300} alt="" />
       </div>
 
-      <div className='relative z-10 flex flex-col-reverse lg:flex-row items-center justify-center h-full px-4'>
+      <div className='relative max-w-[1920px] mx-auto z-10 flex flex-col-reverse lg:flex-row items-center justify-center h-full px-4'>
         <div className='flex-1 space-y-5 max-w-[762px] w-full lg:translate-x-11 2xl:translate-x-40'>
           <h1 className='text-32 md:text-40 xl:text-6xl font-semibold uppercase text-brand-main'>
             Fragrances Those
