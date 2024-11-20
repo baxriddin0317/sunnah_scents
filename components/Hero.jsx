@@ -30,7 +30,7 @@ const Hero = () => {
 
         </div>
         <div className='relative flex-1'>
-          <Image className='flex-1 -translate-x-10 lg:translate-x-0' src={"/sections/hero.png"} alt='hreo' width={1112} height={1031} />
+          <Image className='' src={"/sections/hero.png"} alt='hreo' width={1112} height={1031} />
         </div>
       </div>
     </section>
