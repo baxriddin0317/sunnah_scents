@@ -1,21 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .font-feature-off {
+    font-feature-settings: 'liga' off, 'clig' off;
   }
 }
 
+*::-webkit-scrollbar{
+  @apply w-0.5 bg-brand-gray-100
+}
+*::-webkit-scrollbar-thumb{
+  @apply w-px bg-brand-main
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-montserrat font-feature-off
+}
+
+.active-link{
+  @apply font-semibold text-brand-main
+}
+
+.product-swiper .swiper-pagination-bullet {
+  @apply bg-brand-yellow !opacity-100
+}
+
+.product-swiper .swiper-pagination-bullet-active{
+  @apply !bg-brand-main
+}
+
+.product-swiper .product-swiper {
+  @apply !-bottom-10
 }

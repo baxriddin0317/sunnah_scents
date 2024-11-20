@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "date": "Apr 10, 2023",
+    "title": "Perfumes For Soul",
+    "description": "Lorem Ipsum Dolor Sit Amet, Consecutetur Adipiscing Elit. Praesent A Nisi Nec Lectus Interdum Porttitor.",
+    "imageUrl": "/posts/post-1.jpg"
+  },
+  {
+    "id": 2,
+    "date": "Apr 27, 2023",
+    "title": "Best Quality & Long Lasting",
+    "description": "Lorem Ipsum Dolor Sit Amet, Consecutetur Adipiscing Elit. Praesent A Nisi Nec Lectus Interdum Porttitor.",
+    "imageUrl": "/posts/post-2.jpg"
+  },
+  {
+    "id": 3,
+    "date": "Apr 10, 2023",
+    "title": "Use On Pulse Points",
+    "description": "Lorem Ipsum Dolor Sit Amet, Consecutetur Adipiscing Elit. Praesent A Nisi Nec Lectus Interdum Porttitor.",
+    "imageUrl": "/posts/post-3.jpg"
+  }
+]
