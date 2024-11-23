@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '../ui/pagination'
 import {
@@ -17,7 +17,17 @@ import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
 
 export const TabReview = () => {
+  const [ratings, setRatings] = useState({
+    scent: 0,
+    longevity: 0,
+    silage: 0,
+    value: 0,
+    overall: 0,
+  });
 
+  const handleRatingChange = (key, value) => {
+    setRatings((prev) => ({ ...prev, [key]: value }));
+  };
   return (
     <div className='max-w-[1530px] mx-auto w-full'>
       <div className='text-center space-y-5'>
@@ -51,46 +61,31 @@ export const TabReview = () => {
                   <Input className="w-full bg-white shadow-none h-[50px] rounded-full px-6 border-none focus-visible:ring-brand-main" type="text" placeholder="Type your name to display" />
                 </div>
                 <Textarea className="w-full bg-white shadow-none h-36 rounded-[32px] px-6 border-none focus-visible:ring-brand-main" placeholder="Write your thoughts about perfume" />
-                <div className='flex items-center justify-between w-full flex-wrap lg:gap-2.5 p-4'>
-                  <p className='font-medium text-brand-balck capitalize'>Rate Scent </p>
-                  <div className='flex items-center gap-2.5'>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      i < 4 ? <StarFull key={i} /> : <Star key={i} />
-                    ))}
-                  </div>
-                </div>
-                <div className='flex items-center justify-between w-full flex-wrap lg:gap-2.5 p-4'>
-                  <p className='font-medium text-brand-balck capitalize'>Rate Longitivity</p>
-                  <div className='flex items-center gap-2.5'>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      i < 4 ? <StarFull key={i} /> : <Star key={i} />
-                    ))}
-                  </div>
-                </div>
-                <div className='flex items-center justify-between w-full flex-wrap lg:gap-2.5 p-4'>
-                  <p className='font-medium text-brand-balck capitalize'>Rate Silage </p>
-                  <div className='flex items-center gap-2.5'>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      i < 4 ? <StarFull key={i} /> : <Star key={i} />
-                    ))}
-                  </div>
-                </div>
-                <div className='flex items-center justify-between w-full flex-wrap lg:gap-2.5 p-4'>
-                  <p className='font-medium text-brand-balck capitalize'>Rate Value to money </p>
-                  <div className='flex items-center gap-2.5'>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      i < 4 ? <StarFull key={i} /> : <Star key={i} />
-                    ))}
-                  </div>
-                </div>
-                <div className='flex items-center justify-between w-full flex-wrap lg:gap-2.5 p-4'>
-                  <p className='font-medium text-brand-balck capitalize'>Overall Rating</p>
-                  <div className='flex items-center gap-2.5'>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      i < 4 ? <StarFull key={i} /> : <Star key={i} />
-                    ))}
-                  </div>
-                </div>
+                <StarRating
+                  label="Rate Scent"
+                  value={ratings.scent}
+                  onChange={(value) => handleRatingChange("scent", value)}
+                />
+                <StarRating
+                  label="Rate Longitivity"
+                  value={ratings.longevity}
+                  onChange={(value) => handleRatingChange("longevity", value)}
+                />
+                <StarRating
+                  label="Rate Silage"
+                  value={ratings.silage}
+                  onChange={(value) => handleRatingChange("silage", value)}
+                />
+                <StarRating
+                  label="Rate Value to money"
+                  value={ratings.value}
+                  onChange={(value) => handleRatingChange("value", value)}
+                />
+                <StarRating
+                  label="Overall Rating"
+                  value={ratings.overall}
+                  onChange={(value) => handleRatingChange("overall", value)}
+                />
               </div>
             </div>
             <DialogFooter className="flex w-full !justify-between items-center gap-3 flex-col-reverse lg:flex-row border-t py-6 mt-auto">
@@ -200,5 +195,28 @@ export const TabReview = () => {
           </PaginationContent>
         </Pagination>
     </div>
+  )
+}
+
+const StarRating = ({
+  label,
+  value,
+  onChange,
+}) => {
+  return (
+  <div className='flex flex-col sm:flex-row sm:items-center justify-between w-full flex-wrap lg:gap-2.5 p-4'>
+    <p className='font-medium text-brand-balck capitalize'>{label}</p>
+    <div className='flex items-center gap-2.5'>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <button
+        key={i}
+        onClick={() => onChange(i + 1)}
+        className=""
+      >
+       { i < value ? <StarFull key={i} /> : <Star key={i} />}
+      </button>
+      ))}
+    </div>
+  </div>
   )
 }
