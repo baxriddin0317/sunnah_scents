@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../ui/dialog"
-import { CloseIcon, Star, StarFull } from '../icons/icon'
+import { CloseIcon, Star, StarFull, StarHalf } from '../icons/icon'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
@@ -171,29 +171,29 @@ export const TabReview = () => {
         </div>
       </div>
       <Pagination className="mt-8">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">4</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#" isActive>1</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">
+              2
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">3</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">4</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext href="#" />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   )
 }
@@ -208,14 +208,16 @@ const StarRating = ({
     <p className='font-medium text-brand-balck capitalize'>{label}</p>
     <div className='flex items-center gap-2.5'>
       {Array.from({ length: 5 }).map((_, i) => (
-        <button
+      <button
         key={i}
-        onClick={() => onChange(i + 1)}
-        className=""
+        className="relative"
       >
-       { i < value ? <StarFull key={i} /> : <Star key={i} />}
+        <div className='absolute w-1/2 h-full left-0 top-0'  onClick={() => onChange(i + 0.5)}></div>
+        <div className='absolute w-1/2 h-full right-0 top-0'  onClick={() => onChange(i + 1)}></div>
+        { i < value ? value - i != 0.5 ? <StarFull key={i} /> : <StarHalf key={i} /> : <Star key={i} />}
       </button>
       ))}
+      <p className='w-2 text-brand-balck-100 font-medium'>{value}</p>
     </div>
   </div>
   )
