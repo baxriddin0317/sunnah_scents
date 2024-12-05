@@ -4,13 +4,19 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import CustomButton from './common/Button'
 import { links } from '@/lib/data'
-import Humburger from './icons/Humburger'
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet'
 import { usePathname } from 'next/navigation'
+import { Humburger, HumburgerLight } from './icons/Humburger'
 
 const Header = () => {
   const [fixed, setFixed] = useState(false);
+  const [isBlog, setIsBlog] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    let isCheck = pathname == '/blogs'
+    setIsBlog(isCheck)
+  }, [pathname])
   
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -31,33 +37,33 @@ const Header = () => {
       <div className='max-w-8xl w-full mx-auto flex items-center justify-between xl:px-4'>
         {/* logo */}
         <Link className='relative' href={'/'}>
-          <Image className='hidden xl:block' src={'/logo.png'} width={290} height={60} alt='' />
-          <Image className='xl:hidden' src={'/mini-logo.png'} width={290} height={60} alt='' />
+          <Image className='hidden xl:block' src={isBlog && !fixed ? '/logo-light.png' : '/logo.png'} width={290} height={60} alt='' />
+          <Image className='xl:hidden' src={isBlog && !fixed ? '/mini-logo-light.png' : '/mini-logo.png'} width={270} height={60} alt='' />
         </Link>
         {/* links */}
         <div className='hidden lg:flex items-center gap-6 xl:gap-12'>
           {links.map(link => (
-            <Link className={`${pathname == link.href ? 'active-link' : ''} text-brand-balck hover:text-brand-main capitalize`} key={link.id} href={link.href}>
+            <Link className={`${pathname == link.href ? 'active-link' : ''} ${isBlog && !fixed ? 'text-white' : 'text-brand-balck hover:text-brand-main'}  capitalize`} key={link.id} href={link.href}>
               {link.name}
             </Link>
           ))}
-          <CustomButton className="w-44" content="Login/Signup" />
+          <CustomButton className={isBlog && !fixed ? '!text-brand-main bg-white w-44' : 'w-44'} content="Login/Signup" />
         </div>
         <div className='lg:hidden'>
-          <MobileMenu />
+          <MobileMenu isBlog={isBlog && !fixed} />
         </div>
       </div>
     </header>
   )
 }
 
-const MobileMenu = () => {
+const MobileMenu = ({isBlog}) => {
   const pathname = usePathname();
 
   return (
     <Sheet>
       <SheetTrigger>
-        <Humburger />
+        {isBlog ? <HumburgerLight /> : <Humburger />}
       </SheetTrigger>
       <SheetContent className="bg-brand-yellow py-6 px-0" side="top" >
         <SheetTitle className="sr-only"></SheetTitle>

@@ -10,11 +10,15 @@
   }
 }
 
-*::-webkit-scrollbar{
+.dialog::-webkit-scrollbar{
   @apply w-0.5 bg-brand-gray-100
 }
-*::-webkit-scrollbar-thumb{
+.dialog::-webkit-scrollbar-thumb{
   @apply w-px bg-brand-main
+}
+
+.tags::-webkit-scrollbar{
+  @apply !h-0 w-0
 }
 
 body {

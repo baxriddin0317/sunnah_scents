@@ -42,7 +42,7 @@ export const TabReview = () => {
                 <CloseIcon />
               </DialogClose>
             </DialogHeader>
-            <div className='flex flex-col lg:flex-row gap-3 lg:gap-10 max-h-[80%] w-full overflow-y-auto py-3 lg:py-10'>
+            <div className='flex flex-col lg:flex-row gap-3 lg:gap-10 max-h-[80%] w-full overflow-y-auto py-3 lg:py-10 dialog'>
               {/* content1 */}
               <div className='flex flex-1 lg:flex-col-reverse items-center lg:items-start gap-5 pl-6 xl:pl-20'>
                 <div className="relative bg-white p-2 lg:p-6 border border-brand-gray-100 rounded lg:w-[475px] lg:h-[615px] w-[70px] h-[85px]">

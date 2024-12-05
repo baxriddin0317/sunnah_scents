@@ -119,3 +119,25 @@ export const CloseIcon = () => (
     <path d="M18.66 18.66L6 6" stroke="#507061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
+
+export const SearchIcon = () => (
+<svg xmlns="http://www.w3.org/2000/svg" width={25} height={25} viewBox="0 0 25 25" fill="none">
+  <path d="M11.5 20.5C16.4706 20.5 20.5 16.4706 20.5 11.5C20.5 6.52944 16.4706 2.5 11.5 2.5C6.52944 2.5 2.5 6.52944 2.5 11.5C2.5 16.4706 6.52944 20.5 11.5 20.5Z" stroke="#575757" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M19.4304 21.1898C19.9604 22.7898 21.1704 22.9498 22.1004 21.5498C22.9504 20.2698 22.3904 19.2198 20.8504 19.2198C19.7104 19.2098 19.0704 20.0998 19.4304 21.1898Z" stroke="#575757" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+)
+
+export const CircleCloseIcon = () => (
+<svg xmlns="http://www.w3.org/2000/svg" width={25} height={25} viewBox="0 0 25 25" fill="none">
+  <path d="M12.5 22.5C18 22.5 22.5 18 22.5 12.5C22.5 7 18 2.5 12.5 2.5C7 2.5 2.5 7 2.5 12.5C2.5 18 7 22.5 12.5 22.5Z" stroke="#575757" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M9.66992 15.3299L15.3299 9.66992" stroke="#575757" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M15.3299 15.3299L9.66992 9.66992" stroke="#575757" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+)
+
+export const CircleCheckIcon = () => (
+<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
+  <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#507061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="#507061" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+)

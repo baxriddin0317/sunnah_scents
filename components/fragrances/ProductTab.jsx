@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import { TabAccords } from './TabAccords'
 import TabNotes from './TabNotes'
 import { TabReview } from './TabReview'
+import TabClones from './TabClones'
 
 const ProductTab = () => {
   return (
@@ -13,6 +14,7 @@ const ProductTab = () => {
             <TabsTrigger className="px-3.5 lg:px-6 py-2.5 rounded-md bg-brand-yellow-200 text-brand-gray lg:text-xl font-semibold " value="accords">Account</TabsTrigger>
             <TabsTrigger className="px-3.5 lg:px-6 py-2.5 rounded-md bg-brand-yellow-200 text-brand-gray lg:text-xl font-semibold " value="notes">Notes</TabsTrigger>
             <TabsTrigger className="px-3.5 lg:px-6 py-2.5 rounded-md bg-brand-yellow-200 text-brand-gray lg:text-xl font-semibold " value="reviews">Reviews</TabsTrigger>
+            <TabsTrigger className="px-3.5 lg:px-6 py-2.5 rounded-md bg-brand-yellow-200 text-brand-gray lg:text-xl font-semibold " value="clones">Clones</TabsTrigger>
           </TabsList>
         </div>
         <TabsContent className="py-8 lg:pt-14 lg:pb-28" value="accords">
@@ -23,6 +25,9 @@ const ProductTab = () => {
         </TabsContent>
         <TabsContent className="py-8 lg:pt-14 lg:pb-24" value="reviews">
           <TabReview />
+        </TabsContent>
+        <TabsContent className="py-8 lg:pt-14 lg:pb-24" value="clones">
+          <TabClones />
         </TabsContent>
       </Tabs>
     </section>
