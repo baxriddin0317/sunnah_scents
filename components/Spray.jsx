@@ -2,6 +2,7 @@ import React from 'react'
 import { Input } from './ui/input'
 import CustomButton from './common/Button'
 import Image from 'next/image'
+import SuccessfullyRegister from './common/SuccessfullyRegister'
 
 const Spray = () => {
   return (
@@ -16,7 +17,8 @@ const Spray = () => {
           </h2>
           <div className='flex flex-col md:flex-row items-center gap-2.5 mt-6'>
             <Input className="md:max-w-[405px] bg-white shadow-none h-[50px] rounded-full px-6 border-none focus-visible:ring-brand-main" type="email" placeholder="Enter your email Address " />
-            <CustomButton className="md:max-w-56 w-full" content="Signup Now" />
+            {/* <CustomButton className="md:max-w-56 w-full" content="Signup Now" /> */}
+            <SuccessfullyRegister />
           </div>
         </div>
         <div className='relative w-4/5 h-auto xl:w-[800px] xl:h-[900px]'>
